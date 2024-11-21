@@ -6,6 +6,16 @@
 
 ## Contents
 - **`Codes/`**: Contains all the necessary codes to run the analysis.
-- **`Datasets/`**: [Download Datasets](https://drive.google.com/drive/folders/17P5WTmnLN7GFJXgmu8fK4aquMZexycOO?usp=sharing)  
-- **`Networks/`**: [Download Networks](https://drive.google.com/drive/folders/1dgUsLAm5XRUvAbX7Zq59Z0uDDMqwQ1L8?usp=sharing)
+- **`Codes/Datasets/`**: [Download Datasets](https://drive.google.com/drive/folders/17P5WTmnLN7GFJXgmu8fK4aquMZexycOO?usp=sharing) and put those under this folder
+- **`Codes/Networks/`**: [Download Networks](https://drive.google.com/drive/folders/1dgUsLAm5XRUvAbX7Zq59Z0uDDMqwQ1L8?usp=sharing) and put those under this folder
+
+## Sample Run
+
+When you run any of the Python files in Codes folder, the output will appear as follows:
+
+```bash
+$ python microglia_analysis.py
+['Foxm1', 'Rn45s', 'Ptchd1', 'Esco2', 'Dmrtb1', 'Myb', 'Bhlhe40']
+
+
 
