@@ -1,3 +1,9 @@
+# GAGER: Gene regulatory network Assisted Gene Expression Restoration
+
+**GAGER** an algorithm designed to compare GRNs under two different conditions and identify specific genes whose manipulation could shift gene expression from a source condition, such as diseased tissue, towards a target condition, such as healthy tissue.
+
+---
+
 ## Contents
 - **`Codes/`**: Contains all the necessary codes to run the analysis.
 - **`Datasets/`**: [Download Datasets](https://drive.google.com/drive/folders/17P5WTmnLN7GFJXgmu8fK4aquMZexycOO?usp=sharing)  
