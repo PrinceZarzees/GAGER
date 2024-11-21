@@ -5,14 +5,14 @@ import numpy as np
 from scipy.optimize import curve_fit
 
 # Replace these file paths with the actual paths to your data
-expression_week0_ck = 'mouse_age_grouped_cells/CK_week_0w.table'
-expression_week0_ckp25 = 'mouse_age_grouped_cells/CKp25_week_0w.table'
-expression_week1_ck = 'mouse_age_grouped_cells/CK_week_1w.table'
-expression_week1_ckp25 = 'mouse_age_grouped_cells/CKp25_week_1w.table'
-expression_week2_ck = 'mouse_age_grouped_cells/CK_week_2w.table'
-expression_week2_ckp25 = 'mouse_age_grouped_cells/CKp25_week_2w.table'
-expression_week6_ck = 'mouse_age_grouped_cells/CK_week_6w.table'
-expression_week6_ckp25 = 'mouse_age_grouped_cells/CKp25_week_6w.table'
+expression_week0_ck = 'Datasets/mouse_age_grouped_cells/CK_week_0w.table'
+expression_week0_ckp25 = 'Datasets/mouse_age_grouped_cells/CKp25_week_0w.table'
+expression_week1_ck = 'Datasets/mouse_age_grouped_cells/CK_week_1w.table'
+expression_week1_ckp25 = 'Datasets/mouse_age_grouped_cells/CKp25_week_1w.table'
+expression_week2_ck = 'Datasets/mouse_age_grouped_cells/CK_week_2w.table'
+expression_week2_ckp25 = 'Datasets/mouse_age_grouped_cells/CKp25_week_2w.table'
+expression_week6_ck = 'Datasets/mouse_age_grouped_cells/CK_week_6w.table'
+expression_week6_ckp25 = 'Datasets/mouse_age_grouped_cells/CKp25_week_6w.table'
 
 
 # Read gene expression matrices
@@ -111,10 +111,10 @@ def perform_regression(gene1, gene2,regression_function):
     return params
 
 # Read data from CSV files
-file1_path = 'SCENIC/week0_CK_byscenic.csv'  # Replace with the actual file path for the first graph
-file2_path = 'SCENIC/week0_CKp25_byscenic.csv'  # Replace with the actual file path for the second graph
-expression1_path = 'mouse_age_grouped_cells/CK_week_0w.table'  # Replace with the actual file path for the first gene expression matrix
-expression2_path = 'mouse_age_grouped_cells/CKp25_week_0w.table'  # Replace with the actual file path for the second gene expression matrix
+file1_path = 'Networks/week1_CK_byscenic.csv'  # Replace with the actual file path for the first graph
+file2_path = 'Networks/week1_CKp25_byscenic.csv'  # Replace with the actual file path for the second graph
+expression1_path = 'Datasets/mouse_age_grouped_cells/CK_week_1w.table'  # Replace with the actual file path for the first gene expression matrix
+expression2_path = 'Datasets/mouse_age_grouped_cells/CKp25_week_1w.table'  # Replace with the actual file path for the second gene expression matrix
 
 # Read CSV files into Pandas DataFrames
 graph1_df = pd.read_csv(file1_path)
@@ -302,7 +302,7 @@ best_total_difference = calculate_total_difference(result)
 print (best_total_difference)
 
 
-threshold = best_total_difference*0.30   # for mouse data
+threshold = best_total_difference*0.36   # for mouse data
   # Adjust as needed
 def parents_of(node, graph):
     parents = []

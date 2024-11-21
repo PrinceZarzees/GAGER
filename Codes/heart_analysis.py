@@ -4,8 +4,8 @@ from scipy.optimize import curve_fit
 import networkx as nx
 
 # Replace these file paths with the actual paths to your data
-expression_before = 'heart_data_new/gene_expression_matrix_healthy.csv'
-expression_after = 'heart_data_new/gene_expression_matrix_group2_7042.csv'
+expression_before = 'Datasets/heart_data_new/gene_expression_matrix_healthy.csv'
+expression_after = 'Datasets/heart_data_new/gene_expression_matrix_group1.csv'
 
 
 # Read gene expression matrices
@@ -51,10 +51,10 @@ def perform_regression(gene1, gene2,regression_function):
 
 
 # Read data from CSV files
-file1_path = 'SCENIC/heart_control_byscenic.csv'  # Replace with the actual file path for the first graph
-file2_path = 'SCENIC/heart_group2_7042_byscenic.csv'  # Replace with the actual file path for the second graph
-expression1_path = 'heart_data_new/gene_expression_matrix_healthy.csv'  # Replace with the actual file path for the first gene expression matrix
-expression2_path = 'heart_data_new/gene_expression_matrix_group2_7042.csv'  # Replace with the actual file path for the second gene expression matrix
+file1_path = 'Networks/heart_control_byscenic.csv'  # Replace with the actual file path for the first graph
+file2_path = 'Networks/heart_group1_byscenic.csv'  # Replace with the actual file path for the second graph
+expression1_path = 'Datasets/heart_data_new/gene_expression_matrix_healthy.csv'  # Replace with the actual file path for the first gene expression matrix
+expression2_path = 'Datasets/heart_data_new/gene_expression_matrix_group1.csv'  # Replace with the actual file path for the second gene expression matrix
 
 # Read CSV files into Pandas DataFrames
 graph1_df = pd.read_csv(file1_path)
@@ -94,8 +94,6 @@ for gene in result.index:
     # Add the expression difference to the result dataframe
     result.at[gene, 'Expression Difference'] = expr_difference
 
-    # Add the standard deviations to the result dataframe
-    result.at[gene, 'sigma'] = std_expr_file1
 
 
 # Sort edges by importance and take the top 10%
@@ -105,9 +103,7 @@ graph1_df['normalized_importance'] = graph1_df['importance'] / max(graph1_df['im
 graph2_df['normalized_importance'] = graph2_df['importance'] / max(graph2_df['importance'])
 # print (graph1_df)
 
-# Sort edges by importance and take the top 10%
-# Define the threshold for edge importance
-threshold = 0.10
+threshold = 0.30
 
 # Correct the column names for source and target nodes
 important_edges_graph1 = graph1_df[graph1_df['normalized_importance'] > threshold][['TF', 'target', 'normalized_importance']]
@@ -129,7 +125,7 @@ graph2.remove_edges_from(common_edges)
 difference_graph=graph2
 
 all_nodes = set(graph1_df['TF']).union(set(graph1_df['target'])).union(set(graph2_df['TF'])).union(set(graph2_df['target']))
-difference_graph.add_nodes_from(all_nodes)
+# difference_graph.add_nodes_from(all_nodes)
 
 # Compute the topological sorting
 diff_graph = nx.DiGraph(difference_graph.edges())
@@ -252,7 +248,7 @@ best_total_difference = calculate_total_difference(result)
 print (best_total_difference)
 
 
-threshold = best_total_difference*0.30   
+threshold = best_total_difference*0.35   
   # Adjust as needed
 def parents_of(node, graph):
     parents = []

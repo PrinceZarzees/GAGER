@@ -4,8 +4,8 @@ from scipy.optimize import curve_fit
 import networkx as nx
 
 # Replace these file paths with the actual paths to your data
-expression_before_sacc = 'saccaromycis/Yeast_WT.tsv'
-expression_after_sacc = 'saccaromycis/Yeast_WT_after_ko.tsv'
+expression_before_sacc = 'Datasets/saccaromycis/Yeast_WT.tsv'
+expression_after_sacc = 'Datasets/saccaromycis/Yeast_WT_after_ko.tsv'
 
 
 # Read gene expression matrices
@@ -50,10 +50,10 @@ def perform_regression(gene1, gene2,regression_function):
 
 
 # Read data from CSV files
-file1_path = 'SCENIC/Yeast_WT_byscenic.csv'  # Replace with the actual file path for the first graph
-file2_path = 'SCENIC/Yeast_WT_after_ko_byscenic.csv'  # Replace with the actual file path for the second graph
-expression1_path = 'saccaromycis/Yeast_WT.tsv'  # Replace with the actual file path for the first gene expression matrix
-expression2_path = 'saccaromycis/Yeast_WT_after_ko.tsv'  # Replace with the actual file path for the second gene expression matrix
+file1_path = 'Networks/Yeast_WT_byscenic.csv'  # Replace with the actual file path for the first graph
+file2_path = 'Networks/Yeast_WT_after_ko_byscenic.csv'  # Replace with the actual file path for the second graph
+expression1_path = 'Datasets/saccaromycis/Yeast_WT.tsv'  # Replace with the actual file path for the first gene expression matrix
+expression2_path = 'Datasets/saccaromycis/Yeast_WT_after_ko.tsv'  # Replace with the actual file path for the second gene expression matrix
 
 # Read CSV files into Pandas DataFrames
 graph1_df = pd.read_csv(file1_path)
@@ -91,8 +91,6 @@ for gene in result.index:
     # Add the expression difference to the result dataframe
     result.at[gene, 'Expression Difference'] = expr_difference
 
-    # Add the standard deviations to the result dataframe
-    result.at[gene, 'sigma'] = std_expr_file1
 
 # # Display the result
 # print(result)
@@ -251,7 +249,7 @@ best_total_difference = calculate_total_difference(result)
 # Initialize threshold for stopping criteria
 print (best_total_difference)
 
-threshold = best_total_difference*0.30  
+threshold = best_total_difference*0.30
   # Adjust as needed
 def parents_of(node, graph):
     parents = []
