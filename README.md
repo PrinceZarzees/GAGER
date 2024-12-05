@@ -16,13 +16,15 @@ When you run any of the Python files in Codes folder, the output will appear as 
 ```bash
 $ python microglia_analysis.py
 ['Foxm1', 'Rn45s', 'Ptchd1', 'Esco2', 'Dmrtb1', 'Myb', 'Bhlhe40']
+```
 
-## Run General Pipeline
+## Sample Run
 
 You can run the general pipeline by using the command below. Just ensure your gene expression matrices are csv files with genes in the columns and cells in the rows. If you have other formats like .tsv or genes in the rows and cells in the columns, go to **`Codes/gager.py`** and edit lines 14-17 and 67-71 accordingly.
 
 ```bash
 $ python gager.py Datasets/heart_data_new/gene_expression_matrix_healthy.csv Datasets/heart_data_new/gene_expression_matrix_group1.csv networks/heart_control_byscenic.csv networks/heart_group1_byscenic.csv
+```
 
 
 
