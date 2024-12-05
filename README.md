@@ -20,10 +20,10 @@ $ python microglia_analysis.py
 
 ## Sample Run
 
-You can run the general pipeline by using the command below. Just ensure your gene expression matrices are csv files with genes in the columns and cells in the rows. If you have other formats like .tsv or genes in the rows and cells in the columns, go to **`Codes/gager.py`** and edit lines 14-17 and 67-71 accordingly.
+You can run the general pipeline using the command below. Ensure that your gene expression matrices are CSV files with genes in the columns and cells in the rows. If your files are in other formats, such as .tsv, or if genes are in the rows and cells are in the columns, update Codes/gager.py by editing lines 14–17 and 67–71 accordingly.
 
 ```bash
-$ python gager.py Datasets/heart_data_new/gene_expression_matrix_healthy.csv Datasets/heart_data_new/gene_expression_matrix_group1.csv networks/heart_control_byscenic.csv networks/heart_group1_byscenic.csv
+$ python gager.py Datasets/heart_data_new/gene_expression_matrix_healthy.csv Datasets/heart_data_new/gene_expression_matrix_group1.csv Networks/heart_control_byscenic.csv networks/heart_group1_byscenic.csv
 ```
 
 
