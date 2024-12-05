@@ -55,8 +55,6 @@ def perform_regression(gene1, gene2,regression_function):
 # Read data from CSV files
 file1_path = sys.argv[3]  # Replace with the actual file path for the first graph
 file2_path = sys.argv[4]  # Replace with the actual file path for the second graph
-expression1_path = sys.argv[1]  # Replace with the actual file path for the first gene expression matrix
-expression2_path = sys.argv[2]  # Replace with the actual file path for the second gene expression matrix
 
 # Read CSV files into Pandas DataFrames
 graph1_df = pd.read_csv(file1_path)
@@ -64,11 +62,9 @@ graph2_df = pd.read_csv(file2_path)
 
 # Read gene expression matrices into Pandas DataFrames
 
-file1 = pd.read_csv(expression1_path, sep=',', index_col=0)
-file2 = pd.read_csv(expression2_path, sep=',', index_col=0)
 
-file1=file1.T
-file2=file2.T
+file1=before
+file2=after
 
 
 all_genes = list(set(file1.index).union(file2.index))
